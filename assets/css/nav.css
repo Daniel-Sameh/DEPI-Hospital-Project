@@ -1,0 +1,146 @@
+:root{
+    --primary-clr: #0071ef;
+    --black: rgba(0, 0, 0, 0.862);
+    --font-family: "Roboto", sans-serif;
+}
+body{
+    font-family: var(--font-family);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+/* Start of NavBars */
+nav #mainHeader{
+    padding: 20px;
+}
+nav #mainHeader #navIcon{
+    display: none;
+    color: var(--primary-clr);
+}
+nav #mainHeader #logo{
+    height: 2.2rem;
+    margin-left:-2rem;
+}
+nav #mainHeader .info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 2.6rem;
+}
+nav #mainHeader .info img{
+    height: 2.3rem;
+    margin-right: 20px;
+}
+
+nav #mainHeader .info .details{
+    display: flex;
+    flex-direction: column;
+}
+nav #mainHeader .info .details p:first-child{
+    color: rgba(0, 0, 0, 0.527);
+}
+nav #mainHeader .info .details p{
+    margin: 0;
+}
+nav #mainHeader .info .details .h6{
+    font-weight: 700;
+}
+nav #links{
+    background-color: var(--primary-clr);
+    padding: 20px 0;
+}
+nav #links a{
+    color: white;
+}
+
+nav #links .h6{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+@media (max-width:750px) {
+    nav #mainHeader #navIcon{
+        display: block;
+        cursor: pointer;
+    }
+    nav #mainHeader #contacts{
+        display: none;
+    }
+    nav #links{
+        display: none;
+    }
+    .home{
+        margin: 0;
+    }
+}
+@media (max-width:975px) {
+    .home{
+        margin: 0;
+    }
+}
+/* End Of Nav */
+/* Start of Footer */
+footer{
+    margin-top: 2rem;
+}
+footer #mainFooter{
+    background: url("../images/bg1.png");
+    background-repeat: no-repeat;
+}
+footer #mainFooter .h5{
+    font-weight: 600;
+}
+footer #mainFooter .content{
+    max-width: 17rem;
+}
+footer #mainFooter #contact-info p{
+    color: rgba(0, 0, 0, 0.603);
+}
+footer #mainFooter #contact-info .cont{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+footer #mainFooter #contact-info .cont p{
+    margin: 0;
+}
+footer #mainFooter #contact-info .cont i{
+    color: var(--primary-clr);
+    margin-right: 10px;
+}
+footer #mainFooter #ourDoctors .doct i, footer #mainFooter #ourServices .service i{
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.603);
+}
+footer #mainFooter #openingHours .hours{
+    display: flex;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.603);
+}
+footer #line{
+    width: 80%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.215);
+    border-radius: 20px;
+    margin: 10px auto;
+}
+footer #foot div{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+footer #foot{
+    margin-top: 20px;
+}
+footer #foot div span:first-child a{
+    color: var(--primary-clr);
+    font-weight: 500;
+    margin-left: 3px;
+}
+footer #foot div span:last-child{
+    font-weight: 600;
+    margin-left: 3px;
+}
