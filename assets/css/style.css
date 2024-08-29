@@ -77,3 +77,11 @@
     }
 }
 /* End of Appointment Ad */
+/* Footer */
+footer #mainFooter #ourDoctors .doct i, footer #mainFooter #ourServices .service i{
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.603);
+}
+footer{
+    background-color: white;
+}

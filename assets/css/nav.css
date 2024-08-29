@@ -75,10 +75,17 @@ nav #links .h6{
     .home{
         margin: 0;
     }
+    nav #mainHeader .info{
+        justify-content: flex-start;
+    }
 }
 @media (max-width:975px) {
     .home{
         margin: 0;
+    }
+    nav #mainHeader .info{
+        justify-content: flex-start;
+        margin-bottom: 10px;
     }
 }
 /* End Of Nav */
@@ -113,10 +120,7 @@ footer #mainFooter #contact-info .cont i{
     color: var(--primary-clr);
     margin-right: 10px;
 }
-footer #mainFooter #ourDoctors .doct i, footer #mainFooter #ourServices .service i{
-    font-size: 0.8rem;
-    color: rgba(0, 0, 0, 0.603);
-}
+
 footer #mainFooter #openingHours .hours{
     display: flex;
     justify-content: space-between;
@@ -145,4 +149,83 @@ footer #foot div span:first-child a{
 footer #foot div span:last-child{
     font-weight: 600;
     margin-left: 3px;
+}
+
+footer{
+    background-color: var(--secondary-clr);
+    margin-top: 0;
+    padding: 6rem 6rem 1rem;
+}
+
+#newsletter{
+    text-align: center;
+}
+#newsletter img{
+    margin: 10px;
+}
+#newsletter .h3{
+    font-weight: 600;
+}
+#newsletter p:nth-child(2){
+    color: var(--black);
+}
+.email-subscription {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 10px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.email-subscription i{
+    margin: 10px;
+    color: var(--primary-clr);
+    background-color: white;
+}
+.email-input {
+    border: none;
+    padding: 15px;
+    flex: 1;
+    font-size: 16px;
+    /* height: 127% !important; */
+    width: 171%;
+    margin: 0 !important;
+}
+.email-input:focus {
+    outline: none;
+    box-shadow: none !important;
+}
+.email-subscription label{
+    top: -7px !important;
+    color: var(--black);
+}
+.subscribe-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.subscribe-btn:hover {
+    background-color: #0056b3;
+}
+footer .subscribe-btn{
+    font-weight: 500;
+}
+/*  */
+
+#offcanvasExampleLabel{
+    color: var(--primary-clr);
+    font-weight: 600;
+}
+#offcanvasExampleLabel sub{
+    color: black;
+    font-weight: 500;
+}
+#linksOffCanvas a{
+    color: var(--primary-clr) !important;
+    margin-left: 0;
 }
