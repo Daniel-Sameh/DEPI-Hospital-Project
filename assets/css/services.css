@@ -1,0 +1,48 @@
+:root {
+  --primary-clr: #0071ef;
+  --secondary-clr: rgba(118, 167, 224, 0.144);
+  --black: rgba(0, 0, 0, 0.559);
+  --font-family: 'Roboto', sans-serif;
+}
+section {
+  background-color: var(--secondary-clr);
+}
+/* Header Start */
+#header {
+  background: url('../images/1.jpg');
+  background-size: 240rem;
+  background-repeat: no-repeat;
+  background-position: 0% 95%;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#header .h1 {
+  color: var(--primary-clr);
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+#header p:last-child span:first-child {
+  font-weight: 600;
+}
+/* End of Header */
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+
+.text-container {
+  width: 500px;
+  font-size: large;
+  margin: 20px;
+}
+
+.text-container .title {
+  font-weight: bold;
+}
