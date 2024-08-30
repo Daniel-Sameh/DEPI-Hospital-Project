@@ -31,22 +31,22 @@ section {
 /* End of Header */
 
 /* Departments Starts */
-#departments {
+#about-container {
   padding: 50px 20px;
 }
-#departments .title {
+#about-container .title {
   text-align: center;
   text-transform: capitalize;
 }
-#departments .h3 {
+#about-container .h3 {
   font-weight: 300;
 }
-#departments .h6 {
+#about-container .h6 {
   font-weight: bold;
   font-size: large;
 }
 
-#departments .department {
+#about-container .about {
   width: 270px;
   background-color: white;
   padding: 20px;
@@ -55,15 +55,15 @@ section {
   display: flex;
   flex-direction: column;
 }
-#departments .department img {
+#about-container .about img {
   height: 3.5rem;
   width: 3.5rem;
   margin: 20px 0px;
 }
-#departments .department i {
+#about-container .about i {
   font-size: 0.9rem;
 }
-#departments .department a {
+#about-container .about a {
   font-weight: 500;
 }
 .company-list {
