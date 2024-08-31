@@ -25,49 +25,31 @@ section{
     text-transform: capitalize;
     font-weight: 600;
 }
-#header p:last-child span:first-child{
+#header p:last-child span{
     font-weight: 600;
 }
 /* End of Header */
-/* Doctors Starts */
-#doctors{
-    padding: 5rem;
-    
+/* blogDetails Starts */
+#blog{
+    margin-top: 5rem;
+    background-color: white;
 }
-#doctors .title{
-    text-align: center;
-    margin-bottom:2rem;
+#blog .content{
+    /* margin-left: 10px;
+    margin-top: 20px; */
+    width: 90%;
+    margin:30px 10px ;
 }
-
-
-#doctors .h3{
-    font-weight: 300;
-
-}
-#doctors .doctor{
-   
-   padding:  0;
-    margin: 10px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    
-    
-}
-#doctors .doctor img{
-    height: 13rem;
-    width:100%;
-   
-}
-.content{
-    padding: 20px;
-}
-.job{
-    color: rgba(0, 0, 0, 0.529);
+#blog .by{
+    color: var(--primary-clr);
     font-size: smaller;
 }
-#doctors .doctor:hover{
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+#blog .title{
+    font-weight:bold;
+    margin-bottom: 10px;
+}
+#blog p{
+    font-size: smaller;
+    color: rgba(0, 0, 0, 0.567);
 
 }
-    
