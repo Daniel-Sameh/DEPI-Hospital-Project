@@ -4,6 +4,7 @@
 //         $("#links").toggle(500);
 //      });
 // });
+document.getElementById("date").min = new Date().toISOString().split("T")[0];
 
 function myMap() {
     var mapProp= {

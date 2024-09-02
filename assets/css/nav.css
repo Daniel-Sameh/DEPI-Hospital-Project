@@ -173,15 +173,20 @@ footer{
 #newsletter p:nth-child(2){
     color: var(--black);
 }
+.form-floating{
+    width: 74.4%;
+}
 .email-subscription {
     display: flex;
     /* align-items: center; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
     max-width: 500px;
     margin: 10px auto;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 .email-subscription i{
     margin: 10px;
@@ -194,7 +199,8 @@ footer{
     flex: 1;
     font-size: 16px;
     /* height: 127% !important; */
-    width: 171%;
+    /* width: 171%; */
+    /* width: auto; */
     margin: 0 !important;
 }
 .email-input:focus {
@@ -212,6 +218,9 @@ footer{
     font-size: 16px;
     border: none;
     cursor: pointer;
+    /* border-radius: 2px; */
+    padding: 10px;
+    /* margin: 10px; */
 }
 .subscribe-btn:hover {
     background-color: #0056b3;

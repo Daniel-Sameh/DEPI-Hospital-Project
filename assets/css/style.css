@@ -1,3 +1,9 @@
+:root{
+    --primary-clr: #0071ef;
+    --secondary-clr:rgba(118, 167, 224, 0.144);
+    --black: rgba(0, 0, 0, 0.862);
+    --font-family: "Roboto", sans-serif;
+}
 /* Home Page */
 /* Section 1: Appointment Ad */
 #appointmentAd{
@@ -77,6 +83,99 @@
     }
 }
 /* End of Appointment Ad */
+/* Department Start */
+#departments{
+    background-color: white;
+}
+#departments .title{
+    text-align: center;
+    text-transform: capitalize;
+}
+#departments .h3{
+    font-weight: 300;
+    margin-top: 50px;
+}
+#departments #departments-logos{
+    margin-top: 50px;
+}
+#departments #departments-logos .dept-logo{
+    padding: 20px;
+    background-color:var(--secondary-clr);
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+#departments #departments-logos .dept-logo:hover{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    
+}
+#departments #specialty{
+    padding: 15px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    margin-top: 10px;
+    transform: translateY(15px);
+    z-index: 100 !important;
+    background-color: white;
+}
+#departments #specialty .specialty-details{
+    padding: 30px 20px 30px 20px;
+}
+#departments #specialty p:nth-child(2){
+    color: var(--black);
+}
+#departments #specialty .department-features{
+    padding: 10px;
+    color: var(--black);
+}
+#departments #specialty .department-features i{
+    color: var(--primary-clr);
+}
+#departments #specialty .specialty-div{
+    position: relative;
+    background: url("../images/pexels-edward-jenner-4033151.jpg");
+    background-size: cover;
+}
+#departments #specialty .specialty-details a{
+    background-color: var(--primary-clr);
+    color: whitesmoke;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 3px;
+    /* transform: translateY(10px); */
+}
+#departments #statistics{
+    background-color: var(--primary-clr);
+    color: whitesmoke;
+    padding: 10px;
+    z-index: -100 !important;
+}
+#departments #statistics i{
+    font-size: 3rem;
+    margin-right: 10px;
+}
+#departments #statistics .stat{
+    display: flex;
+    justify-content: center;
+}
+#departments #statistics .cont{
+    display: flex;
+    align-items: center;
+}
+#departments #statistics .cont p{
+    margin-bottom: 0;
+    font-size: small;
+}
+#departments #statistics .cont p:first-child{
+    font-weight: 500;
+    font-size: 2rem;
+    
+}
+/* Department End */
+
+
 /* NewsLetter Start */
 #news-letter{
     background-color: var(--primary-clr);
@@ -85,24 +184,25 @@
     text-align: center;
 }
 .email-subscription{
-    /* justify-content: center; */
-    /* width: 100%; */
     border-radius: 3px;
-    display: block;
-    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+}
+.email-input{
+    width: auto;
 }
 .form-floating{
-    /* flex: 7; */
-    position: relative;
-    width: 100%;
+    width: 70.5%;
 }
 .subscribe-btn{
     border-radius: 2px;
-    /* flex: 3; */
-    position: absolute;
-    z-index: 1000;
-    transform: translate(5.8rem, -52px);
     padding: 10px;
+    /* margin: 10px; */
+    margin: 0.5rem;
+}
+.email-subscription label {
+    top: -3px !important;
 }
 /* NewsLetter End */
 
@@ -116,7 +216,7 @@
     /* background-repeat: no-repeat; */
     background-size: cover;
     /* background-color: blueviolet; */
-    padding: 50px;
+    padding: 50px 50px 100px 150px;
     color: whitesmoke;
 }
 #book-appointment #openings .timing .day{
@@ -130,16 +230,82 @@
 }
 #book-appointment #make-app{
     color: whitesmoke;
-    background: url("../images/03.jpg");
+    background: url("../images/3.jpg");
     box-shadow: inset 0 0 0 2000px rgba(43, 144, 226, 0.68);
     background-size: cover;
-    padding: 50px;
-    height: 100%;
+    background-repeat: no-repeat;
+    padding: 50px 150px 100px 50px;
     
 }
 #book-appointment #make-app form{
     display: flex;
     flex-direction: column;
+}
+#book-appointment #make-app form .in{
+    margin: 10px 0 10px;
+    
+    border: 0;
+    outline: 0;
+    color: whitesmoke;
+    /* box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px; */
+    border-radius: 4px;
+    border: 0.3px solid rgba(245, 245, 245, 0.24);
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    padding: 16px 20px;
+    min-height: 28px;
+    vertical-align: middle;
+    transition: background-color .24s,box-shadow .24s;
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.24s, 0.24s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+    
+    transition: 0.3s;
+    background-color: transparent;
+
+}
+#book-appointment #make-app form .in::placeholder{
+    color: whitesmoke;
+}
+#book-appointment #make-app form .in:focus{
+    /* box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgba(68, 58, 212, 0.36) 0px 0px 0px 4px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px; */
+    /* box-shadow: inset 0 0 0 1px ; */
+    border-color: var(--primary-clr);
+    border: 1px solid var(--primary-clr);
+    box-shadow: inset 0 0 0 1px var(--primary-clr);
+}
+#book-appointment #make-app form select option{
+    color: black;
+}
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#book-appointment #make-app form button{
+    width: 50%;
+    border: none;
+    border-radius: 4px;
+    padding: 15px ;
+    background-color: whitesmoke;
+    color: var(--primary-clr);
+    transition: 0.4s;
+}
+#book-appointment #make-app form button:hover{
+    background-color: var(--primary-clr);
+    color: whitesmoke;
+}
+#book-appointment #make-app form button i{
+    transition: 0.3s;
+}
+#book-appointment #make-app form button:hover i{
+    margin-left: 10px;
 }
 /* Make an Appointment End */
 
@@ -244,6 +410,7 @@ background-color: #3156A3;
     font-size: 20px;
     width: 220px;
     height: 70px;
+    transition: 0.2s;
 }
 
 .view-all-btn:hover {
