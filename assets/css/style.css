@@ -92,7 +92,8 @@
     text-transform: capitalize;
 }
 #departments .h3{
-    font-weight: 300;
+    font-weight: 200;
+    color: var(--black);
     margin-top: 50px;
 }
 #departments #departments-logos{
@@ -342,11 +343,14 @@ body {
 
 .doctors-section h2 {
     margin: 0;
-    font-size: 35px;
-    color: #666;
-    font-weight: 150;
+    font-size: 25px;
+    color: var(--black);
+    font-weight: 100;
 }
-
+.doctors-section .h3{
+    font-weight: 200;
+    color: var(--black);
+}
 .doctors-container {
     display: flex;
     justify-content: center;

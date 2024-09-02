@@ -12,6 +12,9 @@ a{
     color: black;
 }
 /* Start of NavBars */
+nav{
+    background-color: white;
+}
 nav #mainHeader{
     padding: 20px;
 }
