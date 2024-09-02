@@ -77,6 +77,75 @@
     }
 }
 /* End of Appointment Ad */
+/* NewsLetter Start */
+#news-letter{
+    background-color: var(--primary-clr);
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+.email-subscription{
+    /* justify-content: center; */
+    /* width: 100%; */
+    border-radius: 3px;
+    display: block;
+    position: relative;
+}
+.form-floating{
+    /* flex: 7; */
+    position: relative;
+    width: 100%;
+}
+.subscribe-btn{
+    border-radius: 2px;
+    /* flex: 3; */
+    position: absolute;
+    z-index: 1000;
+    transform: translate(5.8rem, -52px);
+    padding: 10px;
+}
+/* NewsLetter End */
+
+/* Make an Appointment Start */
+#book-appointment{
+    background-color: white;
+}
+#book-appointment #openings{
+    background: url("../images/04.jpg");
+    box-shadow: inset 0 0 0 2000px rgba(86, 43, 226, 0.68);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    /* background-color: blueviolet; */
+    padding: 50px;
+    color: whitesmoke;
+}
+#book-appointment #openings .timing .day{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#book-appointment #openings .timing .day:not(:last-child){
+    border-bottom: 0.5px solid rgba(245, 245, 245, 0.712);
+    border-radius: 1px;
+}
+#book-appointment #make-app{
+    color: whitesmoke;
+    background: url("../images/03.jpg");
+    box-shadow: inset 0 0 0 2000px rgba(43, 144, 226, 0.68);
+    background-size: cover;
+    padding: 50px;
+    height: 100%;
+    
+}
+#book-appointment #make-app form{
+    display: flex;
+    flex-direction: column;
+}
+/* Make an Appointment End */
+
+
+
+
 /* Footer */
 footer #mainFooter #ourDoctors .doct i, footer #mainFooter #ourServices .service i{
     font-size: 0.8rem;
