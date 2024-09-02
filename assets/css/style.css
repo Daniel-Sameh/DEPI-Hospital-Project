@@ -420,3 +420,66 @@ background-color: #3156A3;
 .view-all-btn:hover {
     background-color: #0056b3;
 }
+/*  */
+/* News Feed Start */
+#news-feed{
+    background-color: var(--secondary-clr);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#news-feed .h3{
+    font-weight: 200;
+    color: var(--black);
+    /* margin-top: 50px; */
+    text-align: center;
+}
+#news-feed .h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.post {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    max-width: 23rem;
+  }
+  .post:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .post img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .post-content {
+    padding: 20px;
+  }
+  .post-content h2{
+    color: #000;
+    font-weight: bolder;
+    text-transform: capitalize;
+    font-size: 20px;
+  }
+  .post-content label{
+    color: #000;
+  }
+  .post-meta {
+    color: blue;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+.post-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    overflow: hidden;
+    font-size: 14px;
+  }
+/* News Feed End */
