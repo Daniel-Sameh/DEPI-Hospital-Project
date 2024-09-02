@@ -154,3 +154,98 @@ footer #mainFooter #ourDoctors .doct i, footer #mainFooter #ourServices .service
 footer{
     background-color: white;
 }
+/* news feed style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.doctors-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.doctors-section h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.doctors-section h2 {
+    margin: 0;
+    font-size: 35px;
+    color: #666;
+    font-weight: 150;
+}
+
+.doctors-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.doctor-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+}
+
+.doctor-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.doctor-info {
+    padding: 15px;
+    color: #fff;
+}
+#first-doc{
+    background-color: #37C9DD;
+}
+#second-doc{
+background-color: #3FA5EB;
+}
+#third-doc{
+background-color: #0383CD;
+}
+#fourth-doc{
+background-color: #3156A3;
+}
+.contacts span{
+    font-weight: 700;
+}
+.doctor-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.doctor-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.view-all-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    font-size: 20px;
+    width: 220px;
+    height: 70px;
+}
+
+.view-all-btn:hover {
+    background-color: #0056b3;
+}
