@@ -121,10 +121,6 @@ h2 {
   display: none;
 }
 
-/* When the checkbox is checked, show the extra text and hide the 'Read More' link */
-.read-more-toggle:checked ~ .post-text .more-text {
-  display: inline;
-}
 
 .read-more-toggle:checked ~ .read-more-label {
   display: none;
