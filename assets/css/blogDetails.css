@@ -1,0 +1,55 @@
+:root{
+    --primary-clr: #0071ef;
+    --secondary-clr:rgba(118, 167, 224, 0.144);
+    --black: rgba(0, 0, 0, 0.559);
+    --font-family: "Roboto", sans-serif;
+}
+section{
+    background-color: var(--secondary-clr);
+}
+/* Header Start */
+#header{
+    background: url("../images/1.jpg");
+    background-size: 240rem;
+    background-repeat: no-repeat;
+    background-position: 0% 95%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#header .h1{
+    color: var(--primary-clr);
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+#header p:last-child span{
+    font-weight: 600;
+}
+/* End of Header */
+/* blogDetails Starts */
+#blog{
+    margin-top: 5rem;
+    background-color: white;
+}
+#blog .content{
+    /* margin-left: 10px;
+    margin-top: 20px; */
+    width: 90%;
+    margin:30px 10px ;
+}
+#blog .by{
+    color: var(--primary-clr);
+    font-size: smaller;
+}
+#blog .title{
+    font-weight:bold;
+    margin-bottom: 10px;
+}
+#blog p{
+    font-size: smaller;
+    color: rgba(0, 0, 0, 0.567);
+
+}
