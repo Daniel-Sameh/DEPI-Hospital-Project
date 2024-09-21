@@ -1,0 +1,247 @@
+:root{
+  --primary-clr: #0071ef;
+  --secondary-clr:rgba(118, 167, 224, 0.144);
+  --black: rgba(0, 0, 0, 0.862);
+  --font-family: "Roboto", sans-serif;
+}
+body{
+  font-family: var(--font-family);
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+/* Start of NavBars */
+nav{
+  background-color: white;
+}
+nav #mainHeader{
+  padding: 20px;
+}
+nav #mainHeader #navIcon{
+  display: none;
+  color: var(--primary-clr);
+}
+nav #mainHeader #logo{
+  height: 2.2rem;
+  margin-left:-2rem;
+}
+nav #mainHeader .info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 2.6rem;
+}
+nav #mainHeader .info img{
+  height: 2.3rem;
+  margin-right: 20px;
+}
+
+nav #mainHeader .info .details{
+  display: flex;
+  flex-direction: column;
+}
+nav #mainHeader .info .details p:first-child{
+  color: rgba(0, 0, 0, 0.527);
+}
+nav #mainHeader .info .details p{
+  margin: 0;
+}
+nav #mainHeader .info .details .h6{
+  font-weight: 700;
+}
+nav #links{
+  background-color: var(--primary-clr);
+  padding: 20px 0;
+}
+nav #links a{
+  color: white;
+}
+
+nav #links .h6{
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  text-align: center;
+}
+nav #links .home{
+  margin-left: 6rem;
+}
+@media (max-width:750px) {
+  nav #mainHeader #navIcon{
+      display: block;
+      cursor: pointer;
+  }
+  nav #mainHeader #contacts{
+      display: none;
+  }
+  nav #links{
+      display: none;
+  }
+  .home{
+      margin: 0;
+  }
+  nav #mainHeader .info{
+      justify-content: flex-start;
+  }
+}
+@media (max-width:975px) {
+  .home{
+      margin: 0;
+  }
+  nav #mainHeader .info{
+      justify-content: flex-start;
+      margin-bottom: 10px;
+  }
+}
+/* End Of Nav */
+/* Start of Footer */
+footer{
+  margin-top: 2rem;
+}
+footer #mainFooter{
+  background: url("../images/bg1.png");
+  background-repeat: no-repeat;
+  margin-bottom: 6rem;
+}
+footer #mainFooter .h5{
+  font-weight: 600;
+}
+footer #mainFooter .content{
+  max-width: 17rem;
+}
+footer #mainFooter #contact-info p{
+  color: rgba(0, 0, 0, 0.603);
+}
+footer #mainFooter #contact-info .cont{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+footer #mainFooter #contact-info .cont p{
+  margin: 0;
+}
+footer #mainFooter #contact-info .cont i{
+  color: var(--primary-clr);
+  margin-right: 10px;
+}
+
+footer #mainFooter #openingHours .hours{
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.603);
+}
+footer #line{
+  width: 80%;
+  height: 0.8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin: 10px auto;
+}
+footer #foot div{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+footer #foot{
+  margin-top: 20px;
+}
+footer #foot div span:first-child a{
+  color: var(--primary-clr);
+  font-weight: 500;
+  margin-left: 3px;
+}
+footer #foot div span:last-child{
+  font-weight: 600;
+  margin-left: 3px;
+}
+
+footer{
+  background-color: var(--secondary-clr);
+  margin-top: 0;
+  padding: 6rem 6rem 1rem;
+}
+
+#newsletter{
+  text-align: center;
+}
+#newsletter img{
+  margin: 10px;
+}
+#newsletter .h3{
+  font-weight: 600;
+}
+#newsletter p:nth-child(2){
+  color: var(--black);
+}
+.form-floating{
+  width: 74.4%;
+}
+.email-subscription {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+  max-width: 500px;
+  margin: 10px auto;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.email-subscription i{
+  margin: 10px;
+  color: var(--primary-clr);
+  background-color: white;
+}
+.email-input {
+  border: none;
+  padding: 15px;
+  flex: 1;
+  font-size: 16px;
+  /* height: 127% !important; */
+  /* width: 171%; */
+  /* width: auto; */
+  margin: 0 !important;
+}
+.email-input:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+.email-subscription label{
+  top: -7px !important;
+  color: var(--black);
+}
+.subscribe-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  /* border-radius: 2px; */
+  padding: 10px;
+  /* margin: 10px; */
+}
+.subscribe-btn:hover {
+  background-color: #0056b3;
+}
+footer .subscribe-btn{
+  font-weight: 500;
+}
+/*  */
+
+#offcanvasExampleLabel{
+  color: var(--primary-clr);
+  font-weight: 600;
+}
+#offcanvasExampleLabel sub{
+  color: black;
+  font-weight: 500;
+}
+#linksOffCanvas a{
+  color: var(--primary-clr) !important;
+  margin-left: 0;
+}
