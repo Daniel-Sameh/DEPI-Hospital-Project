@@ -1,0 +1,81 @@
+:root {
+  --primary-clr: #0071ef;
+  --secondary-clr: rgba(118, 167, 224, 0.144);
+  --black: rgba(0, 0, 0, 0.559);
+  --font-family: 'Roboto', sans-serif;
+}
+section {
+  background-color: var(--secondary-clr);
+}
+/* Header Start */
+#header {
+  background: url('../../assets/images/1.jpg');
+  background-size: 240rem;
+  background-repeat: no-repeat;
+  background-position: 0% 95%;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#header .h1 {
+  color: var(--primary-clr);
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+#header p:last-child span:first-child {
+  font-weight: 600;
+}
+/* End of Header */
+
+/* Departments Starts */
+.aboutContainer {
+  padding: 50px 20px;
+}
+.aboutContainer .title {
+  text-align: center;
+  text-transform: capitalize;
+}
+.aboutContainer .h3 {
+  font-weight: 300;
+}
+.aboutContainer .h6 {
+  font-weight: bold;
+  font-size: large;
+}
+
+.aboutContainer .about {
+  width: 270px;
+  background-color: white;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.aboutContainer .about img {
+  height: 3.5rem;
+  width: 3.5rem;
+  margin: 20px 0px;
+}
+.aboutContainer .about svg {
+  font-size: 0.8rem;
+}
+.aboutContainer .about a {
+  font-weight: 500;
+}
+.company-list {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 50px;
+}
+
+.company-list img {
+  margin: 20px;
+}

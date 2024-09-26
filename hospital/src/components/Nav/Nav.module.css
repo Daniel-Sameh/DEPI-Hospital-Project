@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root{
   --primary-clr: #0071ef;
   --secondary-clr:rgba(118, 167, 224, 0.144);
@@ -12,77 +13,84 @@ a{
   color: black;
 }
 /* Start of NavBars */
-nav{
+.nav{
   background-color: white;
 }
-nav #mainHeader{
+.nav #mainHeader{
   padding: 20px;
 }
-nav #mainHeader #navIcon{
+.nav #mainHeader #navIcon{
   display: none;
   color: var(--primary-clr);
 }
-nav #mainHeader #logo{
+.nav #mainHeader #logo{
   height: 2.2rem;
   margin-left:-2rem;
 }
-nav #mainHeader .info{
+.info{
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-right: 2.6rem;
+  margin-bottom: 10px;
 }
-nav #mainHeader .info img{
+ .info img{
   height: 2.3rem;
   margin-right: 20px;
 }
 
-nav #mainHeader .info .details{
+ .info .details{
   display: flex;
   flex-direction: column;
+  text-align: start;
 }
-nav #mainHeader .info .details p:first-child{
+ .info .details p:first-child{
   color: rgba(0, 0, 0, 0.527);
 }
-nav #mainHeader .info .details p{
+ .info .details p{
   margin: 0;
 }
-nav #mainHeader .info .details .h6{
+ .info .details .h6{
   font-weight: 700;
+  text-align: start;
 }
-nav #links{
+.nav #links{
   background-color: var(--primary-clr);
   padding: 20px 0;
 }
-nav #links a{
+.nav #links a{
   color: white;
 }
 
-nav #links .h6{
+.nav #links .h6{
   margin: 0;
   padding: 0;
   font-weight: 600;
   text-align: center;
 }
-nav #links .home{
+.nav #links .home{
   margin-left: 6rem;
 }
 @media (max-width:750px) {
-  nav #mainHeader #navIcon{
+  .nav #mainHeader #logo{
+    height: 2.2rem;
+    margin-left:-1.9rem;
+  }
+  .nav #mainHeader #navIcon{
       display: block;
       cursor: pointer;
   }
-  nav #mainHeader #contacts{
+  .nav #mainHeader #contacts{
       display: none;
   }
-  nav #links{
+  .nav #links{
       display: none;
   }
   .home{
       margin: 0;
   }
-  nav #mainHeader .info{
+  .nav #mainHeader .info{
       justify-content: flex-start;
   }
 }
@@ -90,7 +98,7 @@ nav #links .home{
   .home{
       margin: 0;
   }
-  nav #mainHeader .info{
+  .nav #mainHeader .info{
       justify-content: flex-start;
       margin-bottom: 10px;
   }
@@ -101,7 +109,7 @@ footer{
   margin-top: 2rem;
 }
 footer #mainFooter{
-  background: url("../images/bg1.png");
+  background: url("../../assets/images/bg1.png");
   background-repeat: no-repeat;
   margin-bottom: 6rem;
 }
@@ -233,7 +241,7 @@ footer .subscribe-btn{
 }
 /*  */
 
-#offcanvasExampleLabel{
+#offcanvasExampleLabel:nth-child(1){
   color: var(--primary-clr);
   font-weight: 600;
 }
