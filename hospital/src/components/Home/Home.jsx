@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppointmentAd from './AppointmentAd';
 import About from './About';
-import Departments from './Departments';
+import Departments from './DepartmentsSection';
 import DoctorsInfo from './DoctorsInfo';
 import BookAppointment from './BookAppointment';
 import NewsFeed from './NewsFeed';

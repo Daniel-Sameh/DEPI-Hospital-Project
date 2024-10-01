@@ -404,7 +404,7 @@ margin: 0;
 
 
 /* Footer */
-footer #mainFooter #ourDoctors .doct i, footer #mainFooter #ourServices .service i{
+footer #mainFooter #ourDoctors .doct svg, footer #mainFooter #ourServices .service svg{
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.603);
 }

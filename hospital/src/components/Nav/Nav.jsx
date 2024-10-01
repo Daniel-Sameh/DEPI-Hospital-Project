@@ -33,7 +33,7 @@ function Nav() {
                 MUKTI <sub>Best For Medical</sub>
               </Offcanvas.Title>
             </Offcanvas.Header>
-            <Offcanvas.Body>
+            <Offcanvas.Body className={styles.offCanvasBody}>
                 <div>
                   <div className={styles.info}>
                     <img src={phone} alt="Phone" />
@@ -76,10 +76,10 @@ function Nav() {
           </Offcanvas>
         </Col>
         <Col lg='8' sm='6' xs='6' id={styles.contacts}>
-          <Row className='align-items-center'>
-            <Col>
+          <Row className='align-items-center justify-content-center'>
+            <Col md="4" sm="4">
               <div className={styles.info}>
-                <img src={phone} alt="Phone"/>
+                <img className={styles.images} src={phone} alt="Phone"/>
                 <div className={styles.details}>
                   <p>Number:</p>
                   <p className={`${styles.h6} h6`}>
@@ -88,9 +88,9 @@ function Nav() {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col md="4" sm="4">
               <div className={styles.info}>
-                <img src={email} alt="Email"/>
+                <img className={styles.images} src={email} alt="Email"/>
                 <div className={styles.details}>
                   <p>Email:</p>
                   <p className={`${styles.h6} h6`}>
@@ -99,9 +99,9 @@ function Nav() {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col md="4" sm="4" >
               <div className={styles.info}>
-                <img src={address} alt="Address"/>
+                <img className={styles.images} src={address} alt="Address"/>
                 <div className={styles.details}>
                   <p>Address:</p>
                   <p className={`${styles.h6} h6`}>

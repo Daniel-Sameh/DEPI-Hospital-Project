@@ -9,7 +9,7 @@ import img4 from "../../assets/images/4.png"
 import img5 from "../../assets/images/5.png"
 const Companies = () => {
   return (
-    <section class={styles["company-list"]}>
+    <section className={styles["company-list"]}>
       <img src={img} alt="" />
       <img src={img1} alt="" />
       <img src={img2} alt="" />

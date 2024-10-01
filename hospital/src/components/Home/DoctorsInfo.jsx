@@ -77,7 +77,7 @@ const DoctorsInfo = () => {
         </div>
       </div>
 
-      <a href="doctors.html">
+      <a href="/doctors">
         <button className={styles["view-all-btn"]}>View All Doctors »</button>
       </a>
     </section>

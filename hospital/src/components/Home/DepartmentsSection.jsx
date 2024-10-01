@@ -10,7 +10,7 @@ import img3 from '../../assets/images/03.png'
 import img8 from '../../assets/images/08.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight, faCheck, faUserInjured, faUserMd, faFirstAid, faStethoscope} from '@fortawesome/free-solid-svg-icons';
-const Departments = ({handleClick}) => {
+const DepartmentsSection = ({handleClick}) => {
   
   return (
     <section id={styles.departments}>
@@ -133,4 +133,4 @@ const Departments = ({handleClick}) => {
   )
 }
 
-export default Departments
+export default DepartmentsSection

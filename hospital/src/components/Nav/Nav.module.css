@@ -73,6 +73,7 @@ a{
   margin-left: 6rem;
 }
 @media (max-width:750px) {
+
   .nav #mainHeader #logo{
     height: 2.2rem;
     margin-left:-1.9rem;
@@ -95,6 +96,16 @@ a{
   }
 }
 @media (max-width:975px) {
+  .info .images{
+    display: none;
+
+  }
+  .info div p{
+    font-size: 13px;
+  }
+  .offCanvasBody .info div p{
+    font-size: 18px;
+  }
   .home{
       margin: 0;
   }
@@ -107,6 +118,7 @@ a{
 /* Start of Footer */
 footer{
   margin-top: 2rem;
+  text-align: start;
 }
 footer #mainFooter{
   background: url("../../assets/images/bg1.png");
@@ -131,7 +143,7 @@ footer #mainFooter #contact-info .cont{
 footer #mainFooter #contact-info .cont p{
   margin: 0;
 }
-footer #mainFooter #contact-info .cont i{
+footer #mainFooter #contact-info .cont svg{
   color: var(--primary-clr);
   margin-right: 10px;
 }
@@ -167,9 +179,16 @@ footer #foot div span:last-child{
 }
 
 footer{
-  background-color: var(--secondary-clr);
+  background-color: var(--secondary-clr) !important;
   margin-top: 0;
   padding: 6rem 6rem 1rem;
+}
+
+footer #mainFooter #ourDoctors .doct svg,
+footer #mainFooter #ourServices .service svg{
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.603);
+  margin-right: 0.2rem;
 }
 
 #newsletter{
@@ -192,15 +211,15 @@ footer{
   /* align-items: center; */
   /* justify-content: space-between; */
   justify-content: flex-start;
-  max-width: 500px;
-  margin: 10px auto;
+  /* max-width: 390px; */
+  /* margin: 10px 20px; */
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
-.email-subscription i{
-  margin: 10px;
+.email-subscription svg{
+  margin: 0 10px;
   color: var(--primary-clr);
   background-color: white;
 }
@@ -219,7 +238,7 @@ footer{
   box-shadow: none !important;
 }
 .email-subscription label{
-  top: -7px !important;
+  top: 0px !important;
   color: var(--black);
 }
 .subscribe-btn {
