@@ -8,6 +8,7 @@ import ContactUs from './components/ContactUs/ContactUs';
 import Doctors from './components/Doctors/Doctors';
 import Doctor from './components/Doctor/Doctor';
 import Blogs from './components/Blogs/Blogs';
+
 function App() {
   document.title='MOKTI | Best For Medical';
   return (

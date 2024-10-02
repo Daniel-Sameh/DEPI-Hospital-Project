@@ -9,6 +9,7 @@ import NewsFeed from './NewsFeed';
 import Companies from './Companies';
 import NewsLetter from './NewsLetter';
 import HomeFooter from '../HomeFooter/HomeFooter';
+import { Fade } from "react-awesome-reveal";
 const Home = () => {
   document.title='MOKTI | Best For Medical';
   
