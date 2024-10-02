@@ -8,6 +8,7 @@ import ContactUs from './components/ContactUs/ContactUs';
 import Doctors from './components/Doctors/Doctors';
 import Doctor from './components/Doctor/Doctor';
 import Blogs from './components/Blogs/Blogs';
+import DepartmentsPage from './components/DepartmentsPage/DepartmentsPage';
 function App() {
   document.title='MOKTI | Best For Medical';
   return (
@@ -16,7 +17,7 @@ function App() {
         <Nav/>
         <Routes >
           <Route path='/' element={<><Home /><HomeFooter/></>} />
-          <Route path='/departments' element={<>departments</>}/>
+          <Route path='/departments' element={<DepartmentsPage/>}/>
           <Route path='/doctors' element={<Doctors/>}/>
           <Route path='/doctor/:id' element={<Doctor />}/>
           <Route path='/services' element={<>services</>}/>
