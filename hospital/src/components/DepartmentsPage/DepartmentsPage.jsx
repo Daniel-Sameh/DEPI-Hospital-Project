@@ -12,8 +12,6 @@ import Otology from '../../assets/images/01.png'
 import DentalCare from '../../assets/images/08.png'
 import Orthopedics from '../../assets/images/09.png'
 import EyeCare from '../../assets/images/07.png'
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 const DepartmentsPage = () => {
     const departments = [ 
