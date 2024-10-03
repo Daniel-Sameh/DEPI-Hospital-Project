@@ -34,7 +34,7 @@ const Home = () => {
      <DoctorsInfo/>
      <BookAppointment  reference={book}/>
      <NewsFeed/>
-     <Companies/>
+     <Companies black={'false'}/>
      <NewsLetter/>
     </>
   )

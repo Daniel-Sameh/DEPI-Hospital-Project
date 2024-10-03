@@ -7,15 +7,18 @@ import img2 from "../../assets/images/2 (1).png";
 import img3 from "../../assets/images/3 (1).png"
 import img4 from "../../assets/images/4.png"
 import img5 from "../../assets/images/5.png"
-const Companies = () => {
+import { Fade } from 'react-awesome-reveal';
+const Companies = ({black}) => {
   return (
     <section className={styles["company-list"]}>
-      <img src={img} alt="" />
-      <img src={img1} alt="" />
-      <img src={img2} alt="" />
-      <img src={img3} alt="" />
-      <img src={img4} alt="" />
-      <img src={img5} alt="" />
+      <Fade cascade damping={0.2}>
+      <img src={img} alt=""  className={styles[`${black}`]}/>
+      <img src={img1} alt="" className={styles[`${black}`]}/>
+      <img src={img2} alt="" className={styles[`${black}`]}/>
+      <img src={img3} alt="" className={styles[`${black}`]}/>
+      <img src={img4} alt="" className={styles[`${black}`]}/>
+      <img src={img5} alt="" className={styles[`${black}`]}/>
+      </Fade>
     </section>
   )
 }

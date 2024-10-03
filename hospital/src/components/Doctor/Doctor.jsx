@@ -25,19 +25,6 @@ const Doctor = () => {
   const doctor = useSelector(state => state.doctorsData.doctor);  // Access doctor data correctly
 
   console.log("Fetched doctor data:", doctor);
-
-  if (!doctor) {
-    return (
-      <>
-        <GridLoader color="#0271ef" size={70} cssOverride={{ margin: '25rem 20px', marginTop: '40px' }} />
-        <Footer />
-      </>
-    );
-  }
-
-  // Destructure doctor properties (ensure API response matches this structure)
-  const { name, specialization, image, bio, availability } = doctor;
-
   const handleBack = () => {
     window.history.back();
   }
@@ -46,6 +33,28 @@ const Doctor = () => {
       Return Back
     </Tooltip>
   );
+  if (doctor.length === 0) {
+    return (
+      <>
+        <div className={styles.back}>
+          <OverlayTrigger
+            placement="right"
+            delay={{ show: 250, hide: 400 }}
+            overlay={renderTooltip}
+          >
+            <button onClick={handleBack}><FontAwesomeIcon icon={faArrowLeft} /></button>
+          </OverlayTrigger>
+        </div>
+        <GridLoader color="#0271ef" size={70} cssOverride={{ margin: '25rem 20px', marginTop: '40px' }} />
+        <Footer />
+      </>
+    );
+  }
+
+  // Destructure doctor properties (ensure API response matches this structure)
+  const { name, specialization, image, bio, availability } = doctor;
+  // console.log("DOCTOR: ", doctor)
+  
   return (
     <>
       <div className={styles.back}>
@@ -60,7 +69,7 @@ const Doctor = () => {
       <div className={`container ${styles.doctorContainer} p-4`}>
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-12 text-center">
-            <img src={image} alt={name} className={`${styles.doctorImage} img-fluid`} />
+            <img src={`/${image}`} alt={name} className={`${styles.doctorImage} img-fluid`} />
           </div>
           <div className="col-lg-8 col-md-6 col-sm-12">
             <h2 className={`${styles.doctorName} mt-3`}>Dr. {name}</h2>

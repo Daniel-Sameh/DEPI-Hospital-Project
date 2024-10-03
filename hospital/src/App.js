@@ -11,6 +11,7 @@ import Blogs from './components/Blogs/Blogs';
 
 import DepartmentsPage from './components/DepartmentsPage/DepartmentsPage';
 import Services from './components/Services/Services';
+import AboutUs from './components/AboutUs/AboutUs';
 
 function App() {
   document.title='MOKTI | Best For Medical';
@@ -25,7 +26,7 @@ function App() {
           <Route path='/doctor/:id' element={<Doctor />}/>
           <Route path='/services' element={<Services />}/>
           <Route path='/blogs' element={<Blogs/>}/>
-          <Route path='/about' element={<>about</>}/>
+          <Route path='/about' element={<AboutUs/>}/>
           <Route path='/contact' element={<ContactUs/>}/>
         </Routes>
       </Router>

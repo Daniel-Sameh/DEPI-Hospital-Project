@@ -73,9 +73,27 @@ section {
   background-color: white;
   align-items: center;
   justify-content: space-evenly;
-  padding: 50px;
+  /* padding: 50px; */
 }
 
 .company-list img {
   margin: 20px;
+}
+.company-list img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(0%); 
+  padding: 50px;
+}
+
+.company-list img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%); 
+}
+
+.company-list:hover img {
+  filter: grayscale(100%); 
+}
+
+.company-list:hover img:hover {
+  filter: grayscale(0%); 
 }

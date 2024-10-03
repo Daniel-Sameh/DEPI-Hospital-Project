@@ -19,7 +19,7 @@ const AppointmentAd = ({ handleClick }) => {
           <Col className={styles.col}>
             <div>
               <Fade cascade triggerOnce damping={0.3}>
-                <p className={`h3 ${styles.h3}`}>Best Medical Clinic</p>
+                <p className={`h3 ${styles.h3}`}><Fade cascade damping={0.1} style={{margin:'0'}}>Best Medical Clinic</Fade></p>
                 <p className={`h1 ${styles.h1}`}>
                   <span>Bringing health</span> to life for the whole family
                 </p>
