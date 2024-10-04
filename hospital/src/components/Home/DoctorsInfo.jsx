@@ -5,13 +5,15 @@ import img from '../../assets/images/01 (1).jpg'
 import img1 from '../../assets/images/02 (1).jpg'
 import img2 from '../../assets/images/03 (1).jpg'
 import img3 from '../../assets/images/04 (1).jpg'
+import { Slide, Fade } from 'react-awesome-reveal';
 const DoctorsInfo = () => {
   return (
     <section className={styles["doctors-section"]}>
       <p className={`h3 ${styles.h3}`}>Meet Our</p>
       <p className="h2">Mukti Professional Doctors</p>
-
-      <div className={styles["doctors-container"]}>
+      
+      <div className={styles["doctors-container"]} style={{overflow:'hidden'}}>
+      <Slide cascade damping={0.1} direction='down' triggerOnce>
         <div className={styles["doctor-card"]}>
           <img src={img} alt="Dr. Jason Kovalsky" />
           <div className={styles["doctor-info"]} id={styles["first-doc"]}>
@@ -43,7 +45,8 @@ const DoctorsInfo = () => {
             </p>
           </div>
         </div>
-
+        {/* </Slide>
+        <Slide direction='down' damping={0.1} cascade > */}
         <div className={styles["doctor-card"]}>
           <img src={img2}alt="William Khanna" />
           <div className={styles["doctor-info"]} id={styles["third-doc"]}>
@@ -75,8 +78,9 @@ const DoctorsInfo = () => {
             </p>
           </div>
         </div>
+        </Slide>
       </div>
-
+      
       <a href="/doctors">
         <button className={styles["view-all-btn"]}>View All Doctors »</button>
       </a>

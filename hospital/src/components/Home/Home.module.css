@@ -456,6 +456,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   width: 300px;
+  margin-bottom: 15px;
 }
 
 .doctor-card img {
