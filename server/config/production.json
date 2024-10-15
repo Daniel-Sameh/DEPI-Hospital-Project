@@ -1,0 +1,7 @@
+{
+  "name": "Hospital Production",
+  "jwtPrivateKey": "daniolaaa2198",
+  "mail_server": {
+      "host": "http://www.mukti.com"
+  }
+}
