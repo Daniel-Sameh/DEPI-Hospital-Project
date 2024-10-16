@@ -1,37 +1,38 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight, faCheck, faUserInjured, faUserMd, faFirstAid, faStethoscope } from '@fortawesome/free-solid-svg-icons';
 import styles from '../Home/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img from '../../assets/images/01.jpg'
-const NewsFeed = () => {
-  const blogs = [
-    {
-      id: '1',
-      title: "A Wonder Serenity Has Taken Possession of My Entire Soul",
-      body: "A wonder serenity has taken possession of my entire soul like these sweet mornings spring which enjoy with my whole heart. I am alone and feel the charm of existence in this spot which was created for the bliss of souls like mine.",
-      image: img,
-      user: "admin",
-      date: "March 24, 2021",
-    },
-    {
-      id: '2',
-      title: "A Wonder Serenity Has Taken Possession of My Entire Soul",
-      body: "A wonder serenity has taken possession of my entire soul like these sweet mornings spring which enjoy with my whole heart. I am alone and feel the charm of existence in this spot which was created for the bliss of souls like mine.",
-      image: img,
-      user: "admin",
-      date: "March 24, 2021",
-    },
-    {
-      id: '3',
-      title: "A Wonder Serenity Has Taken Possession of My Entire Soul",
-      body: "A wonder serenity has taken possession of my entire soul like these sweet mornings spring which enjoy with my whole heart. I am alone and feel the charm of existence in this spot which was created for the bliss of souls like mine.",
-      image: img,
-      user: "admin",
-      date: "March 24, 2021",
-    },
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBlogs } from '../../APIs/blogsApi';
+import { formatDistanceToNow,format,parseISO } from 'date-fns';
+import { fetchDoctor, fetchDoctors } from '../../APIs/doctorsApi';
 
-  ]
+const NewsFeed = () => {
+  const dispatch = useDispatch();
+  const blogs= useSelector(state=>state.blogsData.blogs);
+  const authors = useSelector(state => state.doctorsData.doctors);
+  useEffect(() => {
+    dispatch(fetchBlogs());
+    dispatch(fetchDoctors());
+  }, [dispatch]);
+
+  // useEffect(() => {
+  //   // When blogs are fetched, get the authors
+  //   if (blogs.length > 0) {
+  //     blogs.forEach(blog => {
+  //       blog.doctor = authors.find(doctor=> doctor._id===blog.author);
+  //     });
+  //   }
+  // }, [dispatch, blogs, authors]);
+  console.log("Blogs!!!: ",blogs);
+  const enrichedBlogs = blogs.map(blog => ({
+    ...blog,
+    doctor: authors.find(doctor => doctor._id === blog.author).name,
+  }));
+  console.log("enrichedBlogs: ", enrichedBlogs);
+ 
   return (
     <section id={styles["news-feed"]}>
       <p className={`h3 ${styles.h3}`}>News Feed</p>
@@ -39,22 +40,25 @@ const NewsFeed = () => {
       <div className="container">
         <div className="row justify-content-center align-items-center">
           {
-            blogs.map((post) => {
+            enrichedBlogs.map((post) => {
               // console.log(post.image)
+              let formattedDate = "";
+              if(post.createdAt) formattedDate = formatDistanceToNow(parseISO(post.createdAt), { addSuffix: true });
+              // console.log(post.createdAt);
               return (
                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" key={post.id}>
                   <div className={styles.post}>
-                    <img src={`${post.image}`} alt="Doctor and patient" />
+                    <img src={`http://localhost:5000/${post.image}`} alt="Doctor and patient" />
                     <div className={styles["post-content"]}>
                       <div className={styles["post-meta"]}>
-                        <span>By {post.user}</span> <span>{post.date}</span>
+                        <span>By {post.doctor}</span>, <span>{formattedDate}</span>
                       </div>
                       <h2>{post.title}</h2>
                       <p className={styles["post-text"]}>
                         {post.body.slice(0,150)}...
                       </p>
-                      <a href={`/blog/${post.id}`}>
-                        <label>
+                      <a href={`/blogs/${post._id}`}>
+                        <label style={{cursor:"pointer"}}>
                           Read More <FontAwesomeIcon icon={faAngleDoubleRight} />
                         </label>
                       </a>

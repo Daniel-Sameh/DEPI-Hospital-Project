@@ -1,10 +1,26 @@
-import React from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import styles from '../Home/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 
 const BookAppointment = ({reference}) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    department: '',
+    phone: '',
+    date: '',
+  });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  
   return (
     <section id={styles["book-appointment"]} >
       <div className="container-fluid">

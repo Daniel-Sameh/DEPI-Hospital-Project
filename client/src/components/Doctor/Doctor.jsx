@@ -11,20 +11,34 @@ import { faBackward, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Overlay from 'react-bootstrap/Overlay';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { fetchDepartment } from "../../APIs/departmentsApi";
 
 const Doctor = () => {
   const { id } = useParams();  // Get the doctor ID from the URL
   const dispatch = useDispatch();
-
+  const doctor = useSelector(state => state.doctorsData.doctor);
+  const department = useSelector(state => state.departmentsData.department);
   // Fetch doctor details using Redux
   useEffect(() => {
-    dispatch(fetchDoctor(id));  // Fetch doctor based on ID from params
+    console.log("ID=", id);
+    dispatch(fetchDoctor(id));
   }, [dispatch, id]);
 
-  // Get doctor data from Redux store
-  const doctor = useSelector(state => state.doctorsData.doctor);  // Access doctor data correctly
+  
+  // if (doctor) {
+  //   dispatch(fetchDepartment(doctor.departmentId));
+  // }
+  useEffect(() => {
+    if (doctor && doctor.departmentId) {
+      console.log("Fetching department with ID:", doctor.departmentId);
+      dispatch(fetchDepartment(doctor.departmentId));
+    }
+  }, [dispatch, doctor]);
 
+  console.log("the department: ", department);
   console.log("Fetched doctor data:", doctor);
+
+
   const handleBack = () => {
     window.history.back();
   }
@@ -33,7 +47,7 @@ const Doctor = () => {
       Return Back
     </Tooltip>
   );
-  if (doctor.length === 0) {
+  if (!doctor||!department) {
     return (
       <>
         <div className={styles.back}>
@@ -51,9 +65,7 @@ const Doctor = () => {
     );
   }
 
-  // Destructure doctor properties (ensure API response matches this structure)
-  const { name, specialization, image, bio, schedule } = doctor;
-  // console.log("DOCTOR: ", doctor)
+
 
   return (
     <>
@@ -69,26 +81,27 @@ const Doctor = () => {
       <div className={`container ${styles.doctorContainer} p-4`}>
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-12 text-center">
-            <img src={`/${image}`} alt={name} className={`${styles.doctorImage} img-fluid`} />
+            <img src={`http://localhost:5000/${doctor.image}`} alt={doctor.name} className={`${styles.doctorImage} img-fluid`} />
           </div>
           <div className="col-lg-8 col-md-6 col-sm-12">
-            <h2 className={`${styles.doctorName} mt-3`}>Dr. {name}</h2>
-            <h4 className={`text-muted ${styles.specialization}`}>{specialization}</h4>
-            <p className={`mt-3 ${styles.bio}`}>{bio}</p>
+            <h2 className={`${styles.doctorName} mt-3`}>Dr. {doctor.name}</h2>
+            <h4 className={`text-muted ${styles.specialization}`} >{department.name}</h4>
+            {/* <p className={`mt-3 ${styles.bio}`}>{bio}</p> */}
             <h5 className={`${styles.availabilityTitle} mt-4`}>Available Dates</h5>
             <ul className={`${styles.availabilityList}`}>
-              {schedule && schedule.map((item, index) => {
-          // Get the date from the object
-          const date = Object.keys(item)[0]; // Gets the first key (the date)
-          const times = item[date]; // Gets the corresponding time slots
-          return (
-            <li key={index}>
-              <strong>Date:</strong> {date}
-              <br />
-              <strong>Time Slots:</strong> {times.join(", ")}
-            </li>
-          );
-        })}
+              {doctor.schedule && doctor.schedule.map((item, index) => {
+                // Get the date from the object
+                const data = item.split(',').map(part => part.trim());
+                const date = data[0]; // Gets the first key (the date)
+                const times = data[1]; // Gets the corresponding time slots
+                return (
+                  <li key={index}>
+                    <strong>Date:</strong> {date}
+                    <br />
+                    <strong>Time Slots:</strong> {times}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
