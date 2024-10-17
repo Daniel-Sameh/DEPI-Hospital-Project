@@ -17,8 +17,13 @@ const NewsFeed = () => {
     dispatch(fetchBlogs());
     dispatch(fetchDoctors());
   }, [dispatch]);
-
-  // useEffect(() => {
+  console.log("Blogs!!!: ",blogs);
+  const enrichedBlogs = blogs.map(blog => ({
+    ...blog,
+    doctor: authors.find(doctor => doctor._id === blog.author).name,
+  }));
+  console.log("enrichedBlogs: ", enrichedBlogs);
+   // useEffect(() => {
   //   // When blogs are fetched, get the authors
   //   if (blogs.length > 0) {
   //     blogs.forEach(blog => {
@@ -26,13 +31,6 @@ const NewsFeed = () => {
   //     });
   //   }
   // }, [dispatch, blogs, authors]);
-  console.log("Blogs!!!: ",blogs);
-  const enrichedBlogs = blogs.map(blog => ({
-    ...blog,
-    doctor: authors.find(doctor => doctor._id === blog.author).name,
-  }));
-  console.log("enrichedBlogs: ", enrichedBlogs);
- 
   return (
     <section id={styles["news-feed"]}>
       <p className={`h3 ${styles.h3}`}>News Feed</p>

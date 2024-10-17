@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -8,22 +8,49 @@ import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBlogs } from '../../APIs/blogsApi';
 import { fetchDoctor, fetchDoctors } from '../../APIs/doctorsApi';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+import { CircleLoader, GridLoader } from 'react-spinners';
+import { faBackward, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Blogs = () => {
   const dispatch = useDispatch();
   const blogs= useSelector(state=>state.blogsData.blogs);
   const authors = useSelector(state => state.doctorsData.doctors);
+  const [isLoadingBlogs, setIsLoadingBlogs] = useState(true);
+  const [isLoadingDoctors, setIsLoadingDoctors] = useState(true);
   useEffect(() => {
-    dispatch(fetchBlogs());
-    dispatch(fetchDoctors());
+    dispatch(fetchBlogs()).then(() => setIsLoadingBlogs(false));
+
+    dispatch(fetchDoctors()).then(() => setIsLoadingDoctors(false));
+    
   }, [dispatch]);
   console.log("Blogs!!!: ",blogs);
-  const enrichedBlogs = blogs.map(blog => ({
+  const enrichedBlogs = blogs && authors.length > 0 ? blogs.map(blog => ({
     ...blog,
-    doctor: authors.find(doctor => doctor._id === blog.author).name,
-  }));
+    doctor: authors.find(doctor => doctor._id === blog.author)?.name || "Unknown",
+  })) : [];
+  
   console.log("enrichedBlogs inside BLOGS: ", enrichedBlogs);
 
+  
+  const handleBack = () => {
+    window.history.back();
+  }
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Return Back
+    </Tooltip>
+  );
+  if(isLoadingBlogs||isLoadingDoctors){
+    return (
+      <>
+        
+        <GridLoader color="#0271ef" size={70} cssOverride={{ margin: '25rem 20px', marginTop: '40px' }} />
+        <Footer />
+      </>
+    );
+  }
   return (
     <>
       <Header title="From Our Blog" page="Home" info="Blogs" />
