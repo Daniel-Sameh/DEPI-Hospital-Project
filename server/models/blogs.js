@@ -22,6 +22,8 @@ const blogSchema = new mongoose.Schema({
     ref: "Doctors",
     required: true
   }
+}, {
+  timestamps: true // This option adds `createdAt` and `updatedAt` fields
 });
 
 const Blogs = mongoose.model("Blogs", blogSchema);

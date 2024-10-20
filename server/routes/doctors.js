@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const upload = require("../routes/image-uploader");
 const auth = require("../middleware/auth");
 const { Departments } = require("../models/departments");
+const {Blogs} = require("../models/blogs");
 const Joi = require("joi");
 
 require('dotenv').config();
@@ -16,7 +17,7 @@ debug.enabled=true;
 //GET all doctors:
 router.get("/", async(req,res)=>{
   try{
-    const doctors= await Doctors.find();
+    const doctors= await Doctors.find({}, { password: 0 });
     res.status(200).send(doctors);
   }catch(err){
     res.status(500),json({ error: 'Failed to fetch doctors' });
@@ -25,7 +26,8 @@ router.get("/", async(req,res)=>{
 ////////////////////////////////////////////////////////////////////////
 //GET a doctor by id:
 router.get("/:id", async (req,res)=>{
-  const doctor= await Doctors.findById(req.params.id);
+  debug("req.params.id= ",req.params.id);
+  const doctor= await Doctors.findById(req.params.id, { password: 0 });
   if(!doctor){
     return res.status(404).send("No doctor with the given id!");
   }
@@ -33,7 +35,7 @@ router.get("/:id", async (req,res)=>{
 });
 ////////////////////////////////////////////////////////////////////////
 //POST(register/signUp) a doctor: 
-router.post("/", upload.single('image'),async(req,res)=>{
+router.post("/", upload.single('profileImage'),async(req,res)=>{
   const {error} = handleDoctorValidation(req.body);
   if(error){
     const errorMsg = error.details.map((err) => err.message);
@@ -75,6 +77,7 @@ router.put("/:id", auth, upload.single('image'), async (req,res)=>{
   // if(req.role!='doctor'){
   //   return res.status(403).send({message: "Forbidden"});
   // }
+  debug("I am in PUT in doctor.js!!!");
   if(req.body.departmentId){
     const department = await Departments.findById(req.body.departmentId);
     if (!department) return res.status(400).send('Invalid department');
@@ -151,7 +154,17 @@ router.post("/login", async(req,res)=>{
   if (!token) { // Handle potential token generation error
     return res.status(500).send("Internal Server Error");
   }
-  res.header("x-auth-token", token).send(_.pick(doctor,['name','email','phone','schedule','departmentId','image']));
+  doctor =_.pick(doctor,['_id', 'name','email','phone','schedule','departmentId','image']);
+  let department = await Departments.findById(doctor.departmentId);
+  if(!department) return res.status(404).send("Couldn't find department");
+  doctor.department = department.name;
+
+  let blogs= await Blogs.find({author: doctor._id});
+  debug("Blogs from login: ",blogs);
+  if(blogs){
+    doctor.blogs= blogs;
+  }
+  res.header("x-auth-token", token).render("view_doctor",{doctor:doctor,token:token});
 
 });
 

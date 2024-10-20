@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog</title>
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="title" content="Mukti | Add Blog Page">
+     <meta name="author" content="ColorlibHQ">
+     <meta name="description" content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS.">
+     <meta name="keywords" content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard"><!--end::Primary Meta Tags--><!--begin::Fonts-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous"><!--end::Fonts--><!--begin::Third Party Plugin(OverlayScrollbars)-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous"><!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Third Party Plugin(Bootstrap Icons)-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
+     <link rel="stylesheet" href="../../../dist/css/adminlte.css"><!--end::Required Plugin(AdminLTE)-->
+ 
+</head>
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href="#"><b>Post</b> a Blog</a>
+        </div>
+        <div class="card">
+            <div class="card-body register-card-body">
+                <p class="login-box-msg">add a new blog to Mukti website</p>
+
+                <form id="blogForm" enctype="multipart/form-data">
+                  <div class="input-group mb-3">
+                      <input type="text" name="author" class="form-control" value="<%= doctor %>"  required>
+                      <div class="input-group-text">
+                          <span class="fas fa-user"></span>
+                      </div>
+                  </div>  
+                    <div class="input-group mb-3">
+                        <input type="text" name="title" class="form-control" placeholder="Title" required>
+                        <!-- 
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                         -->
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="body" class="form-control" placeholder="Blog Body" style="overflow-y: auto;" required>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="form-group mb-4">
+                      <label for="profileImage">Blog Image</label>
+                      <div class="input-group">
+                          <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="image" name="image" accept="image/jpeg, image/png" required>
+                              <label class="custom-file-label" for="image">Choose file</label>
+                          </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AdminLTE JS -->
+    <script src="/adminlte/dist/js/adminlte.min.js"></script>
+    <!-- jQuery -->
+    <!-- <script src="/jquery/dist/jquery.min.js"></script> -->
+
+    <script>
+      const customFileInputs = document.querySelectorAll('.custom-file-input');
+      customFileInputs.forEach(input => {
+          input.addEventListener('change', function () {
+              const fileName = this.value.split('\\').pop(); // Get the file name
+              const label = this.nextElementSibling; // Get the next sibling element (custom-file-label)
+              label.classList.add('selected');
+              label.textContent = fileName; // Set the file name
+          });
+      });
+      // Handle form submission
+      const blogForm = document.getElementById('blogForm');
+      blogForm.addEventListener('submit', async function (e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        const formData = new FormData(this); // Get form data
+        const token = localStorage.getItem('x-auth-token'); // Retrieve the token from localStorage
+        console.log("The token= ", token);
+        
+        try {
+            console.log("Data= ", [...formData]); 
+            const response = await fetch('/api/blogs/', {
+                method: 'POST',
+                headers: {
+                    'x-auth-token': token // Include the token in the headers
+                },
+                body: formData // Send the form data
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to post blog');
+            }
+
+            const data = await response.json(); // Handle success response
+            console.log(data);
+            window.history.back();
+        } catch (error) {
+            console.error('Error:', error); // Handle error
+        }
+      });
+    </script>
+</body>
+</html>
