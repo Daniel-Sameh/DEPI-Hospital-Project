@@ -51,7 +51,7 @@ const NewsFeed = () => {
                       <div className={styles["post-meta"]}>
                         <span>By {post.doctor}</span>, <span>{formattedDate}</span>
                       </div>
-                      <h2>{post.title}</h2>
+                      <h2>{post.title.slice(0,50)}...</h2>
                       <p className={styles["post-text"]}>
                         {post.body.slice(0,150)}...
                       </p>

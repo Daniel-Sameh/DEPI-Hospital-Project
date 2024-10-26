@@ -73,7 +73,7 @@ const Blog = () => {
     <>
       <div className={styles.first}><img src={`http://localhost:5000/${blog.image}`} alt={blog.title} className={styles["blog-image"]} /></div>
       <div className="container-fluid ">
-        <div className={`row ${styles["blog-post"]}`}>
+        <div className={`justify-content-center row ${styles["blog-post"]}`}>
           <div className={`${styles.back} col-lg-1 col-md-3 col-sm-6 col-xs-6`}>
             <OverlayTrigger
               placement="right"
