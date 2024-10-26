@@ -1,0 +1,157 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Jason Kovalsky",
+      "specialization": "Cardiology",
+      "email": "jason.kovalsky@hospital.com",
+      "phone": "123-456-7890",
+      "departmentId": "1",
+      "schedule": [
+        {"2024-10-05": ["09:00 - 12:00"]},
+        {"2024-10-10": ["09:00 - 12:00"]},
+        {"2024-10-15": ["09:00 - 12:00"]}
+      ],
+      "ratings": [],
+      "image": "static/01 (1).jpg",
+      "bio": "Dr. Jason Kovalsky is a highly experienced cardiologist..."
+    },
+    {
+      "id": 2,
+      "name": "Patricia McNeil",
+      "specialization": "Pediatrics",
+      "email": "patricia.mcneel@hospital.com",
+      "phone": "123-555-7890",
+      "departmentId": "2",
+      "schedule": [
+        {"2024-10-08": ["09:00 - 12:00"]},
+        {"2024-10-14": ["09:00 - 12:00"]}
+      ],
+      "ratings": [],
+      "image": "static/02 (1).jpg",
+      "bio": "Dr. Patricia Mcneel specializes in skincare..."
+    },
+    {
+      "id": 3,
+      "name": "William Khanna",
+      "specialization": "Throat Specialist",
+      "email": "william.khanna@hospital.com",  
+      "phone": "123-456-7891",                 
+      "departmentId": "3",                   
+      "schedule": [],                          
+      "ratings": [],                           
+      "image": "static/03 (1).jpg",     
+      "bio": "Dr. William Khanna specializes in throat disorders..." 
+    },
+    {
+      "id": 4,
+      "name": "Eric Patterson",
+      "specialization": "Therapist",
+      "email": "eric.patterson@hospital.com", 
+      "phone": "123-456-7892",                  
+      "departmentId": "4",                      
+      "schedule": [],                       
+      "ratings": [],                       
+      "image": "static/04 (1).jpg",            
+      "bio": "Dr. Eric Patterson is a skilled therapist..."
+    }
+  ],
+  "users": [
+    {
+      "_id": "3",
+      "name": "Daniel Sameh",
+      "email": "danielsameh@gmail.com",
+      "password": "hashed_123456",
+      "phone": "01282220636",
+      "role": "patient",
+      "medicalHistory": [],
+      "appointments": [
+        {
+          "appointmentId": "1",
+          "doctorId": "2",
+          "date": "2024-10-08T09:00:00Z",
+          "status": "Confirmed",
+          "reason": "Eye check-up"
+        }
+      ]
+    }
+  ],
+  "departments": [
+    {
+      "_id": "1",
+      "name": "Cardiology",
+      "headDoctorId": "1",
+      "description": "Department for heart-related issues."
+    },
+    {
+      "_id": "2",
+      "name": "Pediatrics",
+      "headDoctorId": "2",
+      "description": "Department for child care and skincare."
+    }
+  ],
+  "appointments": [
+    {
+      "_id": "1",
+      "userId": "3",
+      "doctorId": "2",
+      "departmentId": "2",
+      "date": "2024-10-08T09:00:00Z",
+      "status": "Confirmed",
+      "reason": "Eye check-up",
+      "notes": ""
+    }
+  ],
+  "blogs": [
+    {
+      "_id": "1",
+      "title": "Benefits of Regular Check-ups",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium rem blanditiis reiciendis...",
+      "authorId": "1",
+      "image": "/static/2 (1).jpg",
+      "likes": [
+        {
+          "userId": "2",
+          "date": "2024-10-10T08:00:00Z"
+        },
+        {
+          "userId": "1",
+          "date": "2024-10-11T08:00:00Z"
+        },
+        {
+          "userId": "3",
+          "date": "2024-10-19T08:00:00Z"
+        }
+      ],
+      "createdAt": "2024-10-01T08:00:00Z"
+    },
+    {
+      "_id": "2",
+      "title": "Testing blog title!",
+      "content": "testing test testing test daniel sameh and dummy data dfdfkdlkflksdflsjdsfjnjknweojfewoimcwdkmcdskmviowrnwmroinrwoifjdoiondvnonwojfnodmfokdmcokd djodmcowim fwoifmiovmdi wrj owrjovi wfodifijwfoidjf wfhwfuindsij ifijnuicwneci fewnifnei jqef efnei jnefiqefnaf n eneofn oqefn fe efmeoqfn",
+      "authorId": "3",
+      "image": "/static/01.jpg",
+      "likes": [
+        {
+          "userId": "1",
+          "date": "2024-10-10T08:00:00Z"
+        }
+      ],
+      "createdAt": "2024-10-01T08:00:00Z"
+    },
+    {
+      "_id": "3",
+      "title": "TEST TEST test",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium rem blanditiis reiciendis...",
+      "authorId": "3",
+      "image": "/static/2 (1).jpg",
+      "likes": [
+        {
+          "userId": "2",
+          "date": "2024-4-25T08:00:00Z"
+        }
+      ],
+      "createdAt": "2024-10-01T08:00:00Z"
+    }
+  ]
+}

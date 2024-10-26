@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dr. <%= doctor.name %></title>
+   <link href="/fontawesome/css/all.min.css" rel="stylesheet">
+   <link href="/adminlte/dist/css/adminlte.min.css" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="title" content="AdminLTE 4 | Login Page">
+   <meta name="author" content="ColorlibHQ">
+   <meta name="description" content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS.">
+   <meta name="keywords" content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard">
+   <link href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" rel="stylesheet" integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous">
+   <link href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" rel="stylesheet" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
+   <link href="../../../dist/css/adminlte.css" rel="stylesheet">
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+   <div class="app-wrapper">
+      <nav class="app-header navbar navbar-expand bg-body" style="min-height: 50px;">
+         <div class="container-fluid">
+         </div>
+      </nav>
+
+      <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+         <div class="sidebar-brand">
+            <a class="brand-link" href="/login">
+               <span class="brand-text fw-light">Mukti Admin</span>
+            </a>
+         </div>
+         <div class="sidebar-wrapper">
+            <nav class="mt-2">
+               <ul class="nav sidebar-menu flex-column" data-accordion="false" role="menu">
+                  <li class="nav-item">
+                     <a class="nav-link" href="/doctors/register">
+                        <i class="nav-icon bi bi-speedometer"></i>
+                        <p>Register New Doctor<i class="nav-arrow bi bi-chevron-right"></i></p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/blogs/<%= doctor._id %>">
+                        <i class="nav-icon bi bi-plus"></i>
+                        <p>Add Blog</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/appointments/<%= doctor.departmentId %>">
+                        <i class="nav-icon bi bi-plus"></i>
+                        <p>Department Appointments</p>
+                     </a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </aside>
+
+      <main class="app-main">
+         <div class="app-content-header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-sm-6">
+                     <h3 class="mb-0">Doctor Account:</h3>
+                  </div>
+                  <div class="col-sm-6">
+                     <ol class="breadcrumb float-sm-end">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Doctor Account</li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="app-content">
+            <div class="container-fluid">
+               <div class="row g-4">
+                  <div class="col-lg-6 col-md-6 justify-content-center align-content-center">
+                     <div class="card card-primary card-outline mb-4">
+                        <div class="card-header">
+                           <div class="user-header">
+                              <img class="rounded-circle shadow" src="http://localhost:5000/<%= doctor.image %>" alt="User Image" height="150px">
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           <div class="mb-3">
+                              <p><strong>Name:</strong> <%= doctor.name %></p>
+                              <p><strong>Email:</strong> <%= doctor.email %></p>
+                              <p><strong>Phone:</strong> <%= doctor.phone %></p>
+                              <p><strong>Department:</strong> <%= doctor.department %></p>
+                              <p><strong>Schedule:</strong></p>
+                              <ul>
+                                 <% doctor.schedule.forEach(schedule => { %>
+                                   <li><%= schedule %></li>
+                                 <% }) %>
+                              </ul>
+                              <a class="btn btn-primary" href="/doctor/edit">Edit account</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <h3 class="mb-0">Doctor Blogs:</h3>
+                  <% doctor.blogs.forEach(blog => { %>
+                  <div class="col-lg-6 col-md-6 justify-content-center">
+                     <div class="card card-primary card-outline mb-4">
+                        <div class="card-header">
+                           <img src="http://localhost:5000/<%= blog.image %>" alt="blogImage" style="width: 100%;">
+                        </div>
+                        <div class="card-body">
+                           <div class="mb-3">
+                              <p><strong><%= blog.title %></strong></p>
+                              <p><%= blog.body %></p>
+                              <a class="btn btn-primary" href="/blogs/edit/<%= blog._id %>">edit</a>
+                              <a class="btn btn-danger" href="#" onclick="confirmDelete('<%= blog._id %>')">delete</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <% }) %>
+               </div>
+            </div>
+         </div>
+      </main>
+      
+      <footer class="app-footer">
+         <div class="float-end d-none d-sm-inline">Anything you want</div>
+         <strong>Copyright &copy; 2014-2024&nbsp;<a class="text-decoration-none" href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+      </footer>
+
+      <script src="/adminlte/dist/js/adminlte.min.js"></script>
+      <script>
+         // function getCookie(name) {
+         //    const value = `; ${document.cookie}`;
+         //    const parts = value.split(`; ${name}=`);
+         //    if (parts.length === 2) return parts.pop().split(';').shift();
+         // }
+         localStorage.setItem("x-auth-token", "<%= token %>");
+         function confirmDelete(blogId) {
+            if (confirm('Are you sure you want to delete this blog?')) {
+               // const token = getCookie('x-auth-token');
+               fetch(`/api/blogs/${blogId}`, {
+                  method: 'DELETE',
+                  headers: {
+                     'Content-Type': 'application/json',
+                     'x-auth-token': "<%= token %>"
+                  }
+               })
+               .then(response => {
+                  if (response.ok) {
+                     alert('Blog deleted successfully.');
+                     location.reload(); // Reload the page
+                  } else {
+                     alert('Failed to delete the blog.');
+                  }
+               })
+               .catch(error => {
+                  console.error('Error:', error);
+                  alert('An error occurred while deleting the blog.');
+               });
+            }
+         }
+      </script>
+   </body>
+</html>
