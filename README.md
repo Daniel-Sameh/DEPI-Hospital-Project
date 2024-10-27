@@ -2,6 +2,8 @@
 
 Welcome to the MUKTI Hospital Fullstack Project! This application serves as a comprehensive hospital management system, designed to streamline various functionalities such as doctor management, patient appointments, and blog publishing.
 
+[![Demo Video](preview/mukti.png)](preview/HospitalProject.mp4)
+
 ## Technologies Used
 
 - **Frontend:** React.js
