@@ -2,30 +2,26 @@
     "version": 2,
     "builds": [
       {
-        "src": "index.js",
+        "src": "./index.js",
         "use": "@vercel/node"
       },
       {
-        "src": "public/**/*",
+        "src": "./public/**/*",
         "use": "@vercel/static"
       },
       {
-        "src": "uploads/**/*",
+        "src": "./uploads/**/*",
         "use": "@vercel/static"
       },
       {
-        "src": "node_modules/admin-lte/**/*",
+        "src": "./node_modules/admin-lte/**/*",
         "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/index.js"
-      },
-      {
-        "src": "/adminlte/(.*)",
-        "dest": "/node_modules/admin-lte/$1"
+        "dest": "./index.js"
       },
       {
         "src": "/uploads/(.*)",
@@ -33,7 +29,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/public/$1"
+        "dest": "./index.js"
       }
     ]
   }
