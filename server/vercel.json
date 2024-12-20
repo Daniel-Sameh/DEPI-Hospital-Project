@@ -4,32 +4,13 @@
     {
       "src": "./index.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "./package.json",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/uploads/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/adminlte/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/fontawesome/(.*)",
-      "dest": "./index.js"
-    },
+  
     {
       "src": "/(.*)",
-      "dest": "./index.js"
+      "dest": "/"
     }
   ],
   "installCommand": "npm install",
