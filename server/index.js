@@ -6,8 +6,7 @@ const path = require('path');
 require('dotenv').config();
 const debug = require("debug")("app:development");
 debug.enabled=true;
-const Joi = require("joi");
-Joi.objectId = require("joi-objectId")(Joi);
+
 const URI = process.env.MONGODB_URI
 const port = process.env.PORT || 5000;
 
@@ -29,7 +28,8 @@ mongoose.connect(URI)
 .catch((err)=>{
   debug("Couldn't connect to mongodb with error: ",err);
 });
-
+const Joi = require("joi");
+Joi.objectId = require("joi-objectId")(Joi);
 /**************************************************************************************************/
 //built-in middleware function:
 app.use(express.urlencoded({ extended: true }));
