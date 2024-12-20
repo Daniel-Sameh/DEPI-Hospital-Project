@@ -64,4 +64,10 @@ app.get("/login", (req, res) => {
 /**************************************************************************************************/
 
 
-app.listen(port, () => debug(`hospital server listening on port ${port}!`))
+// app.listen(port, () => debug(`hospital server listening on port ${port}!`))
+module.exports = app;  // Add this at the end of your index.js
+
+// And for local running
+if (require.main === module) {
+  app.listen(port, () => debug(`hospital server listening on port ${port}!`));
+}
